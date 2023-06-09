@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout 6</title>
+  <link rel="stylesheet" href="css/style6.css">
+</head>   
+<body>
+ 
+<header>
+  
+  <a href="#" id="logo">Logo</a>
+ 
+  <button id="openMenu">&#9776;</button>
+
+  <nav id="menu">
+    <button id="closeMenu">X</button>
+
+    <a href="#">Início</a>
+    <a href="#">Produtos</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+  </nav>
+
+</header>
+  
+  <aside>Conteúdo secundário
+
+    <section>
+      sei
+    </section>
+  </aside>
+  <main>Conteúdo principal
+
+    <section>
+      sei
+    </section>
+  </main>
+
+  <footer>Rodapé</footer>
+
+  
+  <script type ="text/javascript">
+    
+  openMenu.addEventListener("click", () => {
+    
+    menu.style.display = 'flex';
+    menu.style.right = (menu.offsetWidth * -1) + "px"
+    openMenu.style.display ="none"
+    
+    setTimeout(() => {
+    menu.style.right = "0"
+    }, 10)
+  })
+    
+  closeMenu.addEventListener("click", () => {
+
+   
+    menu.style.right = (menu.offsetWidth * -1)+"px"
+    
+     setTimeout(() => {
+    openMenu.removeAttribute('style')
+    menu.removeAttribute('style')
+ } , 200)
+  })
+    
+
+  </script>
+ 
+  
+</body>
+</html>

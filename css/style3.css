@@ -1,0 +1,62 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body, header, nav, main, aside, footer{
+  display: flex;
+}
+
+ header, nav, main, aside, footer{
+  margin: 3px;
+  background-color: rgb(181, 184, 186);
+}
+
+body, header, footer{
+  flex: 1 1 100vw;
+}
+
+
+body{
+  flex-wrap: wrap;
+}
+
+header{
+  height: 50px; 
+}
+
+nav{
+  flex: 1 1 100vw;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+a{
+  margin: 5%;
+  font-size: 1.4em;
+  text-decoration: none;
+  color: inherit;
+}
+
+main{
+  flex: 3 1 500px;
+  height: 100vh; 
+}
+
+aside{
+  flex: 1 1 200px;
+}
+
+footer{
+  height: 150px;
+ 
+}
+
+@media only screen and (max-width: 711.98px){
+
+  aside{
+    height: 100px;
+  }
+}
