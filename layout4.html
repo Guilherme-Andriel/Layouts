@@ -9,21 +9,42 @@
 </head>   
 <body>
  
-<header>
-  
-  <a href="#" id="logo">Logo</a>
+<header> 
+<nav class="nav-bar">
+  <div class="logo">
+    <a href="#" id="logo"><h1>Logo</h1></a>
+ </div>
  
-  <button id="openMenu">&#9776;</button>
+    <button id="openMenu"><img class="icon" src="img/menu_white_36dp.svg" alt="Menu"></button>
 
-  <nav id="menu">
-    <button id="closeMenu">X</button>
+    <div id="navList">
 
-    <a href="#">Início</a>
-    <a href="#">Produtos</a>
-    <a href="#">Sobre</a>
-    <a href="#">Contato</a>
+      <button id="closeMenu"><img src="img/close_white_36dp.svg" alt="fechar menu"></button>
+
+      <ul class="navItems">
+        <li>
+          <button onclick="gotoLink(this)" value="#">Início</button>
+        </li>
+        <li>
+          <button onclick="gotoLink(this)" value="#">Projetos</button>
+        </li>
+        <li>
+          <button onclick="gotoLink(this)" value="#">Sobre</button>
+        </li>
+        <li>
+          <button onclick="gotoLink(this)" value="#">Contato</button>
+        </li>
+      </ul>
+
+      <div class="login-button">
+        <button onclick="gotoLink(this)" value="#">Entrar</button>
+      </div>
+
+    </div>
+
+
   </nav>
-
+  
 </header>
   
   <main>Conteúdo principal</main>
@@ -35,25 +56,28 @@
     
   openMenu.addEventListener("click", () => {
     
-    menu.style.display = 'flex';
-    menu.style.right = (menu.offsetWidth * -1) + "px"
+    navList.style.display = 'flex';
+    navList.style.right = (navList.offsetWidth * -1) + "px"
     openMenu.style.display ="none"
     
     setTimeout(() => {
-    menu.style.right = "0"
+    navList.style.right = "0"
     }, 10)
   })
     
   closeMenu.addEventListener("click", () => {
 
-   
-    menu.style.right = (menu.offsetWidth * -1)+"px"
+    navList.style.right = (navList.offsetWidth * -1)+"px"
     
      setTimeout(() => {
     openMenu.removeAttribute('style')
-    menu.removeAttribute('style')
+    navList.removeAttribute('style')
  } , 200)
   })
+
+  function gotoLink(link){
+    location.href = link.value
+  }
     
 
   </script>

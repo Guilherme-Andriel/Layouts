@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Poppins:ital,wght@0,300;0,400;0,500;1,200&display=swap');
+
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
 }
 
-body, header, nav, main, aside, footer{
+body, main, aside, footer{
   display: flex;
 }
 
- header, nav, main, aside, footer{
+ main, aside, footer{
   margin: 3px;
-  background-color: rgb(181, 184, 186);
+  background-color: #f4f4f4;
+
 }
 
 body, header, footer{
@@ -20,37 +23,66 @@ body, header, footer{
 
 body{
   flex-wrap: wrap;
+  background-color: #FDFDFD;
+  font-family: "Inter", sans-serif;
 }
 
 header{
- height: 100px;
+ background-color: #24252a;
+ box-shadow: 0px 3px 10px #464646;
+ margin-bottom: 10px;
 }
 
-header #logo{
-  flex: 0 1 200px;
-  background-color: rgb(183, 209, 237);
-  font-size: 1.3em;
+nav.nav-bar{
   display: flex;
+  justify-content: space-between;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin: 25px;
+}
+
+
+#navList, #navList ul{
+  display: flex;
+  align-items: center;
+}
+
+
+#navList ul{
   justify-content: center;
-  align-items: center;
+  list-style: none;
+  margin: 0 15px;
 }
 
-nav{
-  flex: 1 1 100vw;
-  justify-content: flex-end;
-  align-items: center;
-  transition: 0.3s;
+button{
+  border: none;
+  font-size: 1.05rem;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-nav a{
-  margin: 3%;
-  font-size: 1.2em;
+#navList ul li button{
+  background-color: #24252a;
+  font-weight: 400;
+}
+
+#navList .login-button button{
+  background-color: #0187a7;
+  font-weight: 500;
+  margin: 0 20px;
 }
 
 a{
-text-decoration: none;
+  text-decoration: none;
   color: inherit;
 }
+
 
 #openMenu, #closeMenu{
   border: none;
@@ -86,30 +118,49 @@ footer{
 @media only screen and (max-width: 717.98px){
 
   #openMenu, #closeMenu{
-    display: block;
+    display: flex;
   }
   
   #closeMenu{
     position: fixed;
     right: 15px;
     top: 15px;
+    color: #000;
   }
   
   #openMenu{
     margin-left: auto;
     margin-right: 10px;
+    align-self: center;
   }
-  
-  nav{
-     position: fixed;
+
+  #navList{
+    position: fixed;
      flex-direction: column;
       width: 100vw;
-     height: 100vh;
+      height: 100vh;
       background: rgba(255, 255, 255, 0.8);
       align-items: center;
       justify-content: center;
       margin: 0;
       display: none;
-   }
+      transition: 0.5s;
+  }
+
+  .navItems{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #navList ul li button, .login-button button{
+    width: 100px;
+  }
+
+  #navList .login-button button{
+    margin: 20px 0;
+  }
+  
+  
 }
 

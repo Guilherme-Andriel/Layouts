@@ -8,67 +8,97 @@
   <link rel="stylesheet" href="css/style5.css">
 </head>   
 <body>
- 
-<header>
-  
-  <a href="#" id="logo">Logo</a>
- 
-  <button id="openMenu">&#9776;</button>
 
-  <nav id="menu">
-    <button id="closeMenu">X</button>
-
-    <a href="#">Início</a>
-    <a href="#">Produtos</a>
-    <a href="#">Sobre</a>
-    <a href="#">Contato</a>
-  </nav>
-
-</header>
-  
-  <aside>Conteúdo secundário
-
-    <section>
-      sei
-    </section>
-  </aside>
-  <main>Conteúdo principal
-
-    <section>
-      sei
-    </section>
-  </main>
-
-  <footer>Rodapé</footer>
-
-  
-  <script type ="text/javascript">
+  <header> 
+    <nav class="nav-bar">
+      <div class="logo">
+        <a href="#" id="logo"><h1>Logo</h1></a>
+     </div>
+     
+        <button id="openMenu"><img class="icon" src="img/menu_white_36dp.svg" alt="Menu"></button>
     
-  openMenu.addEventListener("click", () => {
+        <div id="navList">
+        <ul class="navItems">
+            <li>
+              <button onclick="gotoLink(this)" value="#">Início</button>
+            </li>
+            <li>
+              <button onclick="gotoLink(this)" value="#">Projetos</button>
+            </li>
+            <li>
+              <button onclick="gotoLink(this)" value="#">Sobre</button>
+            </li>
+            <li>
+              <button onclick="gotoLink(this)" value="#">Contato</button>
+            </li>
+          </ul>
     
-    menu.style.display = 'flex';
-    menu.style.right = (menu.offsetWidth * -1) + "px"
-    openMenu.style.display ="none"
+          <div class="login-button">
+            <button onclick="gotoLink(this)" value="#">Entrar</button>
+          </div>
+      </nav>
+      
+      <div class="mobile">
+             <ul class="navItems">
+            <li>
+              <button onclick="gotoLink(this)" value="#">Início</button>
+            </li>
+            <li>
+              <button onclick="gotoLink(this)" value="#">Projetos</button>
+            </li>
+            <li>
+              <button onclick="gotoLink(this)" value="#">Sobre</button>
+            </li>
+            <li>
+              <button onclick="gotoLink(this)" value="#">Contato</button>
+            </li>
+          </ul>
+        
+         <div class="login-button">
+            <button onclick="gotoLink(this)" value="#">Entrar</button>
+          </div>
+        
+        </div>
+      
+    </header>
+     
+      <aside>Conteúdo secundário
     
-    setTimeout(() => {
-    menu.style.right = "0"
-    }, 10)
-  })
+        <section>
+          sei
+        </section>
+      </aside>
+      <main>Conteúdo principal
     
-  closeMenu.addEventListener("click", () => {
+        <section>
+          sei
+        </section>
+      </main>
+      <footer>Rodapé</footer>
+    
+      <script type ="text/javascript">
+        
+     openMenu.addEventListener("click", ()=> {
+      let menuMobile = document.querySelector(".mobile")
 
-   
-    menu.style.right = (menu.offsetWidth * -1)+"px"
+      
+        if(menuMobile.classList.contains('open')){
+          menuMobile.classList.remove('open');
+          document.querySelector('.icon').src = "img/menu_white_36dp.svg"
+        }
+        else{
+          menuMobile.classList.add('open')
+           document.querySelector('.icon').src = "img/close_white_36dp.1.svg"
+        }
+        
+        
+     })
     
-     setTimeout(() => {
-    openMenu.removeAttribute('style')
-    menu.removeAttribute('style')
- } , 200)
-  })
+      function gotoLink(link){
+        location.href = link.value
+      }
+        
     
-
-  </script>
- 
-  
+      </script>
 </body>
 </html>

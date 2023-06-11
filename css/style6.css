@@ -82,6 +82,10 @@ aside{
   overflow: auto;
 }
 
+aside::-webkit-scrollbar{
+  display: none;
+}
+
 footer{
   height: 100px;
   order:3;
