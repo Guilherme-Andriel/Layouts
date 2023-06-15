@@ -1,45 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200&display=swap');
+
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
 }
 
-body, header, nav, main, aside, footer{
+body{
+  font-family: "Poppins", sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+#sideBar{
+  position: fixed;
+  top: 0;
   display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 240px;
+  height: 100%;
+  padding: 40px 10px 30px 10px;
+  border-right: 1px solid #2f3336;
+  transition: all 0.35s;
 }
 
- header, nav, main, aside, footer{
+.sideBarHeader{
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.usuario{
+  width: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 0.4s;
+  margin-left: 10px;
+}
+
+.usuario:hover{
+  transform: scale(1.5);
+}
+
+#sideBar button{
+  height: 60px;
+  background-color: transparent;
+  border:0;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+#sideBar button > span{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 48px;
+  padding: 0 16px 0 12px;
+  border-radius: 24px;
+  line-height: 1;
+  transition: 0.2s;
+}
+
+#sideBar button:hover >span{
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#sideBar button i{
+  position: relative;
+  font-size: 28px;
+  transition: 0.2s;
+}
+
+#sideBar button span{
+  font-size: 16px;
+}
+
+#sideBar > nav{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+main#mainPoint{
+  margin-left: 250px;
+  margin-right: 6px;
+  overflow: hidden
+}
+
+@media(width < 920px) {
+  #sideBar{
+    width: 72px;
+  }
+
+  #sideBar button > span{
+    width: 50px;
+  }
+
+  #sideBar button > span > span{
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+main#mainPoint{
+  margin-left: 78px;
+  transition: margin 0.4s;
+ }
+}
+
+#buttonMobile{
+  display: none;
+  align-self: flex-start;
+  align-items: center;
+  margin: 16px;
+  background-color: transparent;
+  color: #fff;
+  border: 0;
+}
+
+.mobileText{
+  font-size: 20px;
+}
+
+.menuMobile{
+  display: none;
+}
+
+@media(max-width: 480px){
+  #sideBar{
+    display: none;
+  }
+
+  #buttonMobile{
+    display: flex;
+  }
+
+  #buttonMobile span{
+    font-size: 24px;
+    margin-left: 8px;
+  }
+
+  main#mainPoint{
+    margin-left: 6px;
+  }
+
+  
+.menuMobileActive{
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.menuMobileActive button{
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  margin-bottom: 16px;
+  font-family: inherit;
+}
+
+.menuMobileActive button > span{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#buttonClose > span i{
+  font-size: 30px;
+}
+}
+
+
+header.headerMain, .main, .secondary, footer{
   margin: 3px;
-  background-color: rgb(181, 184, 186);
-}
+} 
 
-body, header, footer{
+header.headerMain{
+  background-color: #343434;
+  height: 70px;
+  display: flex;
   flex: 1 1 100vw;
 }
 
-
-body{
+#content{
+  display: flex;
+  flex: 1 1 auto;
   flex-wrap: wrap;
 }
 
-header{
-  height: 50px; 
-}
-
-nav{
-  flex: 1 1 200px;
-}
-
-main{
+#content .main{
+  display: flex;
   flex: 3 1 500px;
-  height: 100vh; 
+  background-color: #343434;
+  height: 100vh;
 }
 
-aside{
-  flex: 1 1 200px;
+#content .secondary{
+  display: flex;
+  flex: 1 1 250px;
+  background-color: #343434;
+  height: 100vh;
 }
 
 footer{
-  height: 150px;
- 
+  background-color: #343434;
+  display: flex;
+  flex: 1 1 100vw;
+  height: 200px;
 }
